@@ -1,0 +1,10 @@
+langchain
+faiss-cpu
+sentence-transformers
+transformers
+peft
+streamlit
+fastapi
+uvicorn
+pytest
+langdetect
