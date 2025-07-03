@@ -1,8 +1,9 @@
-🏠 RAG Living Guide
-한국어+영어 다국어 학습 가능한 RAG 시스템
+# 🏠 RAG Living Guide
+
+한국어+영어 다국어 학습 가능한 RAG 시스템  
 “자취생 & 외국인 생활 정보 챗봇”
 
-프로젝트 구조
+## 프로젝트 구조
 rag_living_guide_full/
 ├── app/                             # 실행 애플리케이션 (Streamlit + FastAPI)
 │   ├── main.py                      # FastAPI 엔트리 + Streamlit 런처
@@ -57,45 +58,12 @@ rag_living_guide_full/
 └── README.md                        # 프로젝트 개요 + 사용법
 
 
-⚙️ 설치
+
+## 설치
+```bash
 git clone <repo_url>
 cd rag_living_guide_full
 pip install -r requirements.txt
 
-(옵션) FAISS 전용 환경
+# (옵션) FAISS 전용 환경
 pip install -r requirements-faiss.txt
-
-🔧 환경 변수
-.env.example 복사 → .env 생성
-
-KOALPACA_API_URL=http://localhost:8001/generate
-KOALPACA_API_KEY=
-EMBEDDING_MODEL=trained_models/embedding_model/
-VECTORSTORE_PATH=vectorstore/index
-LOG_LEVEL=INFO
-
-📖 데이터 전처리 & 인덱스
-data/raw/ 에 원본 문서 배치
-data/processed/ 에 txt 변환본 배치
-python scripts/build_faiss.py
-
-🚀 실행
-FastAPI
-uvicorn app.main:app --reload
-
-Streamlit
-streamlit run app/web_ui.py
-
-🧪 테스트
-pytest
-
-📈 학습
-Retriever (Dense)
-python training/retriever/train.py --help
-
-LLM (LoRA)
-python training/llm/prepare_data.py
-python training/llm/train_lora.py --help
-
-📜 라이선스
-MIT License
